@@ -1,0 +1,11 @@
+
+NTE -- Source kit.  Version 0.5  2017-08-01.
+
+NTE is a portable (C-language) control program to enable Telnet access
+on Netgear routers.  NTE runs on UNIX, UNIX-like, VMS, and Windows
+systems, and has a command-line interface.
+
+See enclosed file: README
+
+For information on NTE: http://antinode.info/nte
+

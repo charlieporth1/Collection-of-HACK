@@ -1,0 +1,16 @@
+_build
+*~
+.DS_Store
+*#*
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+*.byte
+*.native
+*.log

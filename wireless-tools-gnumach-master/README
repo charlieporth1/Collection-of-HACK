@@ -1,0 +1,12 @@
+
+ Wireless Tools for GNU Mach 1.x
+====================================
+
+  The Wireless Tools for GNU Mach are derived from the equivalents used
+  on GNU/Linux systems.  The base for this version of wireless-tools-gnumach
+  is upstream version 26, available from 
+  http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html
+
+
+
+  $Id: README,v 1.1 2006-08-28 22:44:11 stesie Exp $

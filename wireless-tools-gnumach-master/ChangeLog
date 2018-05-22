@@ -1,0 +1,12 @@
+2006-09-24  Stefan Siegl  <stesie@brokenpipe.de>
+
+	* src/iwlist.c: Imported file from GNU/Linux wireless tools package,
+	version 26.
+	* src/Makefile.am (sbin_PROGRAMS): Added iwlist.
+	(iwlist_SOURCES): New variable.
+
+2006-09-24  Stefan Siegl  <stesie@brokenpipe.de>
+
+	* src/mach-ioctl.c (iw_get_ext): Don't fill variable `buf' before
+	device_get_status call.
+

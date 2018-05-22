@@ -1,0 +1,56 @@
+
+This is 'iw', a tool to use nl80211.
+
+
+To build iw, just enter 'make'. If that fails, set the
+PKG_CONFIG_PATH environment variable to allow the Makefile
+to find libnl.
+
+
+'iw' is currently maintained at http://git.sipsolutions.net/iw.git/,
+some more documentation is available at
+http://wireless.kernel.org/en/users/Documentation/iw.
+
+Please send all patches to Johannes Berg <johannes@sipsolutions.net>
+and CC linux-wireless@vger.kernel.org for community review.
+
+
+一.iw 3.7 工具  依赖 libnl-1.1-stable-master 库
+
+I.先编译 libnl-1.1-stable-master 库
+
+命令：
+
+#./configure --host=arm-linux --prefix=/home/visteon/libnl-1.1-stable-master/libl  CC=arm-fsl-linux-gnueabi-gcc
+
+1.--host=arm-linux  是 平台 
+ 
+2.--prefix=/home/visteon/libnl-1.1-stable-master/libl 需要安装的地址，iw后面设置的库要和这个对应。
+
+3.CC=arm-fsl-linux-gnueabi-gcc  是我们自己的交叉工具链。不同工具链不一样
+
+开始编译
+# make
+
+安装 安装之后 在 /home/visteon/libnl-1.1-stable-master/libl 会有我们的编译文件。里面包含库，头文件。
+
+#make install  
+
+II.编译IW工具
+
+命令 设置环境变量。 注意：如果写到脚本里面，需要用source这个命令。否则会出来问题。下面设置的地址就是前面
+libnl安装的地址。
+
+#export PKG_CONFIG_PATH=/home/visteon/libnl-1.1-stable-master/libl/lib/pkgconfig:$PKG_CONFIG_PATH
+
+
+
+设置makefile 一定要添加下面的命令，否则会出现找不到头文件，及时解决了，也会报其他的错误。
+iw.h:5:29: fatal error: netlink/netlink.h: No such file or directory
+
+#CFLAGS += -I/home/visteon/libnl-1.1-stable-master/libl/include
+#CFLAGS += -L/home/visteon/libnl-1.1-stable-master/libl/lib
+
+
+编译
+#make CC=arm-fsl-linux-gnueabi-gcc

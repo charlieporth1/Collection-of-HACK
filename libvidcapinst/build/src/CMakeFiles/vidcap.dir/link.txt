@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libvidcap.a  CMakeFiles/vidcap.dir/conv.c.o CMakeFiles/vidcap.dir/conv_to_rgb.c.o CMakeFiles/vidcap.dir/conv_to_i420.c.o CMakeFiles/vidcap.dir/conv_to_yuy2.c.o CMakeFiles/vidcap.dir/double_buffer.c.o CMakeFiles/vidcap.dir/hotlist.c.o CMakeFiles/vidcap.dir/logging.c.o CMakeFiles/vidcap.dir/sapi.c.o CMakeFiles/vidcap.dir/sliding_window.c.o CMakeFiles/vidcap.dir/vidcap.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libvidcap.a

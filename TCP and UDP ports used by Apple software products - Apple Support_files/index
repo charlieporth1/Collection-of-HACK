@@ -1,0 +1,35 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACUtil.showMultipleOffers(
+{ "offers" : [
+
+{ "offer" : "<div> <h2>Contact Apple Support</h2> <p>Need more help? Save time by starting your support request online and we\'ll connect you to an expert.</p> <a onclick=\"ACHistory.addOfferReason(\'en_US\')\" href=\"https://getsupport.apple.com/GetproductgroupList.do?caller=ikb&PRKEYS=133314,PF6,134327,productcategory,133333,133741,135555,PF20,PL139,135122,PL124,PF16,PF15&locale=en_US\" class=\"more\">Get started</a> <img src=\"https://km.support.apple.com/library/content/dam/edam/applecare/images/en_US/applecare/contact-support2-1.png\" width=\"180\" height=\"160\" alt=\"\" data-hires=\"true\"> </div>", "position" : "BOTTOM" , "locale" : "en_US"
+}
+
+] }
+);

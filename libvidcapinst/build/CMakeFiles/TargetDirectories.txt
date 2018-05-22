@@ -1,0 +1,5 @@
+/Users/charlieporth/Downloads/libvidcapinst/build/CMakeFiles/rebuild_cache.dir
+/Users/charlieporth/Downloads/libvidcapinst/build/CMakeFiles/edit_cache.dir
+/Users/charlieporth/Downloads/libvidcapinst/build/src/CMakeFiles/rebuild_cache.dir
+/Users/charlieporth/Downloads/libvidcapinst/build/src/CMakeFiles/edit_cache.dir
+/Users/charlieporth/Downloads/libvidcapinst/build/src/CMakeFiles/vidcap.dir

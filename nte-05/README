@@ -1,0 +1,142 @@
+      NTE (NetgearTelnetEnable)
+      =========================
+
+   NTE version 0.5  2017-08-01  Steven M. Schweda
+
+------------------------------------------------------------------------
+
+   NTE enables Telnet access on Netgear routers whose firmware responds
+to the UDP message sent by this program.  (Among these are the D7000 and
+R7000.)
+
+   This program and its relatives have a long and varied heritage.  This
+adaptation began with a source kit from:
+
+      https://github.com/insanid/NetgearTelnetEnable
+
+   In general, the code which constructs the message to be sent to the
+router is largely unchanged.  Most other code has been replaced.  Files
+with an "_orig" suffix are preserved from that source kit.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+   All the serious work (reverse engineering) was done by others.
+Anyone who wants more credit for the original code is welcome to ask.
+The original (insanid) README said the following:
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+      Modified to work with newer Netgear routers R7000 R7500 by insanid
+      Windows telnetenable-win.c and binary by LuKePicci
+
+      Based on https://github.com/davejagoda/NetgearTelnetEnable
+      For more information: http://wiki.openwrt.org/toh/netgear/telnet.console
+
+      Comments from original README.md:
+      This code did not quite work for me on OS X, but it was OK on Debian:
+
+      http://www.seattlewireless.net/telnetenable.c
+
+      I've made changes so it works on OS X 10.7.4.  I've also added some
+      comments to clarify what was wrong.
+
+------------------------------------------------------------------------
+
+      Build
+      -----
+
+   UNIX and UNIX-like (including GNU/Linux and macOS):
+
+      make
+
+   VMS:
+
+      MMS                       ! Or MMK
+
+   Windows:
+
+      Visual Studio (2010 Express) project and solution files are
+      provided in the "win32" directory.  These should work with any
+      newer Visual Studio version up through 2017 (Community).
+
+   Manually compiling and linking the code should also be possible.
+The actions in "Makefile" or "descrip.mms" should serve as a guide, if
+any is needed.
+
+------------------------------------------------------------------------
+
+      Installation
+      ------------
+
+   On any operating system, the NTE executable can be copied to any
+desired destination.  (On a UNIX[-like] system, for example,
+"/usr/local/bin" might be a reasonable choice.)
+
+   On a UNIX[-like] or Windows system, this destination directory should
+appear on the user's PATH, or else an explict path to the NTE executable
+may be needed.
+
+   On VMS, it can be helpful to define a foreign-command symbol:
+
+      NTE == "$ dev:[dir]NTE.EXE"
+
+------------------------------------------------------------------------
+
+      Usage
+      -----
+
+   Running NTE with no arguments should show usage instructions like the
+following (here, on a Mac):
+
+pro3$ ./nte
+
+nte 0.5 (2017-08-01)
+
+Usage:
+   nte mac=mac_addr name=dns_name password=pass user=user_name
+        [debug[=mask]]
+
+Keywords may be abbreviated and in any case (e.g.: M=mac_addr).
+MAC address (mac_addr) may include colons, and digits a-f in any case.
+DNS name (dns_name) may be a name or an IP address.
+See source for debug details.  "debug" with no mask enables all.
+
+Example:
+   nte m=50:6b:03:e9:ad:86 n=192.168.0.1 u=admin p=password
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+      NTE Command Arguments
+      ---------------------
+
+   For details on the required information, reading the router's User
+Manual may be helpful.
+
+   The IP address to specify is the IP address of the router's "LAN
+port", NOT the IP address of the WAN port ("Internet Port").  Common
+default LAN IP addresses for these routers include 192.168.0.1,
+192.168.1.1, and 10.0.0.1.  If your router's LAN interface is in your
+local "hosts" file or in your DNS data, then its name may be used
+instead of its address.
+
+   The MAC address to specify is the MAC address of the router's "LAN
+port", NOT the MAC address of the WAN port ("Internet Port").  On the
+router's managment Web site, a menu path like "ADVANCED" or "ADVANCED >
+Administration > Router Status" might provide this under "Router
+Information".  Note that with NTE, case and colons don't matter, so
+copy+paste of the MAC address as displayed should work.
+
+   The default user name and password may be "admin" and "password", but
+the password may be (or have been) changed by the user.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+   Other, similar programs may expect the arguments without labels, in a
+particular order.  NTE uses a different syntax, as shown above, and the
+"keyword=value" specifications may be in any order.
+
+   Unlike the code on which NTE is based, NTE attempts to read a (UDP)
+response from the router after the magic message is sent.  Experiment
+reveals that if the enable message succeeded, the router sends a reply
+message ("ACK").
+
+------------------------------------------------------------------------
