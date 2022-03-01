@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "npm": "^5.8.0",
-    "plist": "0.4"
+    "plist": "3.0"
   },
   "keywords": [
     "osx",
